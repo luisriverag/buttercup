@@ -274,6 +274,8 @@ down-k8s() {
 	kubectl delete secret ghcr --namespace "$BUTTERCUP_NAMESPACE"
 	kubectl delete namespace "$BUTTERCUP_NAMESPACE"
 	set +x
+	echo -e "${GRN}Cleanup complete.${NC}"
+	echo -e "${BLU}Note: If you plan to redeploy and access SigNoz, clear your browser cookies for http://localhost:33301 to avoid login issues.${NC}"
 	set -e
 }
 
